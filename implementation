@@ -14,3 +14,23 @@
 //  根据2-SUM的描述，3-SUM问题实际上就是做一个循环，
 //  每个循环把a[i]作为一个target，再使用2-SUM的思想加以实现
 //  
+struct pair{
+  int i;
+  int j;
+};
+
+pair threeSum(int a[]){
+    int n=a.length;
+    int left=0,right=n-1;
+    for(int i=0;i<n;i++){
+        while(left<right){
+           if(a[left]+a[right]==-a[i])
+              return pair(left,right);
+           else if(a[left]+a[right]>-a[i])
+              right--;
+           else
+              left++;
+        }
+    }
+    return pair(-1,-1);
+}
