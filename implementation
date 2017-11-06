@@ -21,8 +21,8 @@ struct pair{
 
 pair threeSum(int a[]){
     int n=a.length;
-    int left=0,right=n-1;
     for(int i=0;i<n;i++){
+        int left=i+1,right=n-1;//这里设置成i+1,是防止重复找；
         while(left<right){
            if(a[left]+a[right]==-a[i])
               return pair(left,right);
